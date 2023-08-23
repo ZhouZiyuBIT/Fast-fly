@@ -1,0 +1,17 @@
+<launch>
+    <node pkg="fast_fly" name="track" type="track.py" output="screen">
+        <remap from="~odom" to="/q_sim/odom" />
+        <remap from="~track_traj" to="/plan/track_traj" />
+    </node>
+
+    <node pkg="fast_fly" name="plan" type="plan.py" output="screen">
+        <remap from="~gates" to="/gates_sim/gates" />
+    </node>
+    
+    <node pkg="fast_fly" name="gates_sim" type="gates_sim.py" output="screen">
+        <remap from="~odom" to="/q_sim/odom" />
+    </node>
+
+    <include file="$(find px4_bridge)/launch/q_sim.launch"/>
+    <include file="$(find px4_bridge)/launch/q_visual.launch"/>
+</launch>

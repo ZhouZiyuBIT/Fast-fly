@@ -1,0 +1,12 @@
+mass: 1.130
+arm_length: 0.3
+
+inertia: [0.01, 0.01, 0.02]
+drag_coeff: [0.44, 0.35, 0.31]
+torque_coeff: 0.0133
+
+omega_xy_max: 6
+omega_z_max: 2
+
+thrust_min: 0.0
+thrust_max: 6.9   # max accel z: 24.46m/s^2
